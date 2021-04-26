@@ -6,7 +6,6 @@ import ApexCharts from "apexcharts";
 import Chart from "react-apexcharts";
 
 function Charts3(props) {
-  const crypto = "bitcoin";
   const [loading, setLoading] = useState(true);
   const [priceData, setPriceData] = useState(null);
   const [currency, setCurrency] = useState(null);
@@ -25,12 +24,11 @@ function Charts3(props) {
     }
     fetchPrices();
   }, []);
-  const handleSelect2 = ["brl"];
-
+  var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=usd&from=1392577232&to=1422577232`;
+  console.log(props.match.params.id);
+  console.log(props.match.params);
   const getChartData = async () => {
-    const res = await fetch(
-      `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=1392577232&to=1422577232`
-    );
+    const res = await fetch(crypto);
     const data = await res.json();
     const categories = Object.values(data.total_volumes.map((X) => X[0]));
     const series = Object.values(data.total_volumes.map((X) => X[1]));

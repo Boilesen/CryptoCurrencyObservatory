@@ -4,11 +4,9 @@ import Home from "./Components/Home";
 import Header from "./Components/Header";
 import "./App.css";
 import Charts from "./Components/Charts";
-
+import Charts2 from "./src/Components/Charts2";
 import Lista from "./Components/Lista";
-import Completecoin from "./Components/Completecoin";
-import Fullcoin from "./Components/Fullcoin";
-import TestCharts from "./Components/TestCharts";
+import Completo from "./Components/Fullcoin";
 
 const App = (props) => {
   return (
@@ -18,12 +16,25 @@ const App = (props) => {
         <Route exact path="/" component={Home} />
         <Route exact path="/lista" component={Lista} />
         <Route exact path="/charts" component={Charts} />
-        <Route exact path="/fullcoin/:id" component={Fullcoin} />
-        <Route exact path="/testcharts/:id" component={TestCharts} />
-        <Route exact path="/Completecoin" component={Completecoin} />
+        <Route exact path="/charts2" component={Charts2} />
+        <Route exact path="/completo/:crypto" component={Completo} />
       </Switch>
     </div>
   );
 };
 
 export default App;
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>thomas</h1>
+//       </header>
+//       <Charts />
+//       <Lista />
+//     </div>
+//   );
+// }
+
+// export default App;

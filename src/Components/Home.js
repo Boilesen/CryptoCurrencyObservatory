@@ -26,6 +26,10 @@ const Home = () => {
         <h2>fullcoin</h2>
         <p>fullcoin elas</p>
       </Link>
+      <Link className="testcharts" to="/testcharts">
+        <h2>testcharts</h2>
+        <p>testcharts elas</p>
+      </Link>
     </div>
   );
 };

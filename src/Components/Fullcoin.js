@@ -30,9 +30,7 @@ function CoinComplete(props) {
 
   return (
     <div className="coin-app">
-      <div>
-        <TestCharts />
-      </div>
+      <div></div>
       {filteredCoins.map((coin) => {
         return (
           <Coin

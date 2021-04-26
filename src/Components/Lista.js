@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Coin from "./Coin";
+import { Link } from "react-router-dom";
 
 export default Lista;
 
@@ -42,9 +43,9 @@ function Lista() {
       </div>
       {filteredCoins.map((coin) => {
         return (
-          <div>
+          <div className="conteiner">
             <Coin
-              key={coin.id}
+              id={coin.id}
               name={coin.name}
               price={coin.current_price}
               symbol={coin.symbol}

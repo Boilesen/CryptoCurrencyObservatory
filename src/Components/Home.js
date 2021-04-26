@@ -21,14 +21,10 @@ const Home = () => {
           quibusdam quos?
         </p>
       </Link>
-      <Link className="charts2" to="/charts2">
-        <h2>graficos2</h2>
-        <p>
-          Lor2em ipsum, d2olor sit amet consectetur adipisicing elit. Ullam
-          delectus 2 in22cidunt od2volu2ptatum esse reiciendis, in ut optio
-          beatae li2ber2o. Offic22lit max2ime2 soluta, sint magni explicabo
-          quibusdam quos?
-        </p>
+
+      <Link className="fullcoin" to="/fullcoin">
+        <h2>fullcoin</h2>
+        <p>fullcoin elas</p>
       </Link>
     </div>
   );

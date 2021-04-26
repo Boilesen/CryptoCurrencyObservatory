@@ -1,7 +1,7 @@
 import React from "react";
 
 const Coin = ({
-  di,
+  id,
   symbol1,
   name1,
   image1,
@@ -33,6 +33,7 @@ const Coin = ({
         <div className="coin">
           <img src={image1} alt="crypto" />
           <h1>{name1}</h1>
+          <h2>{id}</h2>
           <p className="coin-symbol">{symbol1}</p>
         </div>
         <div className="coin-data">

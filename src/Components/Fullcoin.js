@@ -4,7 +4,7 @@ import Coin from "./CoinComplete";
 
 export default CoinComplete;
 
-function CoinComplete() {
+function CoinComplete(props) {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
@@ -24,26 +24,15 @@ function CoinComplete() {
   };
 
   const filteredCoins = coins.filter((coin) =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
+    coin.id.includes(props.match.params.id)
   );
 
   return (
     <div className="coin-app">
-      <div className="coin-search">
-        <h1 className="coin-text">Search a currency</h1>
-        <form>
-          <input
-            className="coin-input"
-            type="text"
-            onChange={handleChange}
-            placeholder="Search"
-          />
-        </form>
-      </div>
       {filteredCoins.map((coin) => {
         return (
           <Coin
-            di={coin.id}
+            id={coin.id}
             symbol1={coin.symbol}
             name1={coin.name}
             image1={coin.image}

@@ -5,7 +5,7 @@ import ApexCharts from "apexcharts";
 
 import Chart from "react-apexcharts";
 
-function Charts() {
+function Charts2() {
   const [loading, setLoading] = useState(true);
   const [priceData, setPriceData] = useState(null);
   const [currency, setCurrency] = useState(null);
@@ -20,12 +20,6 @@ function Charts() {
 
   useEffect(() => {
     async function fetchPrices() {
-      const res = await fetch(
-        "https://api.coindesk.com/v1/bpi/currentprice.json"
-      );
-      const data = await res.json();
-      setCurrency(data.bpi.USD.code);
-      setPriceData(data.bpi);
       getChartData();
     }
     fetchPrices();
@@ -37,8 +31,8 @@ function Charts() {
       `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=1392577232&to=1422577232`
     );
     const data = await res.json();
-    const categories = Object.values(data.prices.map((X) => X[0]));
-    const series = Object.values(data.prices.map((X) => X[1]));
+    const categories = Object.values(data.market_caps.map((X) => X[0]));
+    const series = Object.values(data.market_caps.map((X) => X[1]));
     const time = categories.map(function (x) {
       return new Date(x).toLocaleDateString("en-US");
     });
@@ -63,8 +57,8 @@ function Charts() {
 
   return (
     <div className="container">
-      <div className="nav" style={{ padding: "15px", backgroundColor: "gold" }}>
-        Coindesk API Data
+      <div className="nav" style={{ padding: "15px", backgroundColor: "red" }}>
+        market_caps
       </div>
       {loading ? (
         <div>
@@ -74,35 +68,6 @@ function Charts() {
         </div>
       ) : (
         <>
-          <div
-            className="price-container"
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-              width: 600,
-              height: 300,
-              margin: "0 auto",
-            }}
-          >
-            <div className="form">
-              <Select
-                placeholder="Select your currency"
-                onChange={handleSelect}
-                options={options}
-              />
-            </div>
-            <div className="price">
-              <Card>
-                <Card.Content>
-                  <Card.Header>{currency} Price</Card.Header>
-                  <Card.Description>
-                    {priceData[currency].rate}
-                  </Card.Description>
-                </Card.Content>
-              </Card>
-            </div>
-          </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Chart
               options={chartData}
@@ -118,4 +83,4 @@ function Charts() {
   );
 }
 
-export default Charts;
+export default Charts2;

@@ -4,6 +4,8 @@ import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
 import ApexCharts from "apexcharts";
 
 import Chart from "react-apexcharts";
+import Chart2 from "./Charts2";
+import Chart3 from "./Charts3";
 
 function Charts() {
   const [loading, setLoading] = useState(true);
@@ -111,6 +113,12 @@ function Charts() {
               width="1200"
               height="300"
             />
+          </div>
+          <div>
+            <Chart2 />
+          </div>
+          <div>
+            <Chart3 />
           </div>
         </>
       )}

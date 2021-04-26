@@ -4,7 +4,7 @@ import Home from "./Components/Home";
 import Header from "./Components/Header";
 import "./App.css";
 import Charts from "./Components/Charts";
-import Charts2 from "./Components/Charts2";
+import Charts2 from "./src/Components/Charts2";
 import Lista from "./Components/Lista";
 
 const App = (props) => {

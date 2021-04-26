@@ -8,6 +8,10 @@ const Home = () => {
         <h2>Cryptos</h2>
         <p>Todas elas</p>
       </Link>
+      <Link className="completecoin" to="/completecoin">
+        <h2>Completa</h2>
+        <p>Todas nmfgkdhngfkhjn</p>
+      </Link>
       <Link className="charts" to="/charts">
         <h2>graficos</h2>
         <p>

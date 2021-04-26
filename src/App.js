@@ -6,6 +6,7 @@ import "./App.css";
 import Charts from "./Components/Charts";
 import Charts2 from "./Components/Charts2";
 import Lista from "./Components/Lista";
+import Completecoin from "./Components/Completecoin";
 
 const App = (props) => {
   return (
@@ -14,6 +15,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/lista" component={Lista} />
+        <Route exact path="/completecoin" component={Completecoin} />
         <Route exact path="/charts" component={Charts} />
         <Route exact path="/charts2" component={Charts2} />
       </Switch>

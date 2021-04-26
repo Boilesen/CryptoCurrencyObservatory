@@ -23,8 +23,8 @@ function CoinComplete(props) {
     setSearch(e.target.value);
   };
 
-  const filteredCoins = coins.filter((coin) =>
-    coin.id.includes(props.match.params.id)
+  const filteredCoins = coins.filter(
+    (coin) => coin.id === props.match.params.id
   );
 
   return (

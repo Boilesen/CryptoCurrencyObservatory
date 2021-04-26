@@ -25,17 +25,3 @@ const App = (props) => {
 };
 
 export default App;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <h1>thomas</h1>
-//       </header>
-//       <Charts />
-//       <Lista />
-//     </div>
-//   );
-// }
-
-// export default App;

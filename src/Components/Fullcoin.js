@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Coin from "./CoinComplete";
 import TestCharts from "./TestCharts";
+import TestCharts1 from "./TestCharts1";
+import TestCharts2 from "./TestCharts2";
 
 export default CoinComplete;
 
@@ -30,6 +32,12 @@ function CoinComplete(props) {
 
   return (
     <div className="coin-app">
+      <div>
+        <TestCharts1 match={props.match} />
+      </div>
+      <div>
+        <TestCharts2 match={props.match} />
+      </div>
       <div>
         <TestCharts match={props.match} />
       </div>

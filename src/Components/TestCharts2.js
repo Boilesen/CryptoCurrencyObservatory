@@ -33,8 +33,8 @@ function Charts3(props) {
     var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=${currency}&from=1556389240&to=${TS}`;
     const res = await fetch(crypto);
     const data = await res.json();
-    const categories = Object.values(data.total_volumes.map((X) => X[0]));
-    const series = Object.values(data.total_volumes.map((X) => X[1]));
+    const categories = Object.values(data.market_caps.map((X) => X[0]));
+    const series = Object.values(data.market_caps.map((X) => X[1]));
     const time = categories.map(function (x) {
       return new Date(x).toLocaleDateString("en-US");
     });
@@ -62,8 +62,11 @@ function Charts3(props) {
 
   return (
     <div className="container">
-      <div className="nav" style={{ padding: "15px", backgroundColor: "blue" }}>
-        total_volumes
+      <div
+        className="nav"
+        style={{ padding: "15px", backgroundColor: "lightblue" }}
+      >
+        Market Cap
       </div>
       {loading ? (
         <div>

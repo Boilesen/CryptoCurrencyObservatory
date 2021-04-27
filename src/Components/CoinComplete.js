@@ -37,13 +37,19 @@ const Coin = ({
           <p className="coin-symbol">{symbol1}</p>
         </div>
         <div className="coin-data">
-          <p className="coin-price">${current_price1}</p>
-          <p className="coin-high">${high_24h1.toLocaleString() || ""}</p>
-          <p className="coin-low">${low_24h1.toLocaleString() || ""}</p>
-          <p className="coin-volume">${total_volume1.toLocaleString() || ""}</p>
+          <p className="coin-price">current_price: ${current_price1}</p>
+          <p className="coin-high">
+            high_24h: ${high_24h1.toLocaleString() || ""}
+          </p>
+          <p className="coin-low">
+            low_24h: ${low_24h1.toLocaleString() || ""}
+          </p>
+          <p className="coin-volume">
+            total_volume: ${total_volume1.toLocaleString() || ""}
+          </p>
 
           <p className="coin-volume">
-            Mkt Cap Rank: ${price_change_24h1.toLocaleString() || ""}
+            price_change_24h: ${price_change_24h1.toLocaleString() || ""}
           </p>
           {price_change_percentage_24h1 < 0 ? (
             <p className="coin-percent red">
@@ -59,7 +65,7 @@ const Coin = ({
           </p>
 
           <p className="coin-volume">
-            Mkt Cap Rank: ${total_volume1.toLocaleString() || ""}
+            total_volume1: ${total_volume1.toLocaleString() || ""}
           </p>
 
           <p className="coin-marketcap">
@@ -67,7 +73,8 @@ const Coin = ({
           </p>
 
           <p className="coin-change">
-            Mkt Cap Rank: ${market_cap_change_24h1.toLocaleString() || ""}
+            market_cap_change_24h: $
+            {market_cap_change_24h1.toLocaleString() || ""}
           </p>
 
           {market_cap_change_percentage_24h1 < 0 ? (
@@ -81,17 +88,15 @@ const Coin = ({
           )}
 
           <p className="coin-diluted">
-            Mkt Cap Rank: ${fully_diluted_valuation1}
+            fully_diluted_valuation: ${fully_diluted_valuation1}
           </p>
 
           <p className="coin-supply">
-            Mkt Cap Rank: ${circulating_supply1.toLocaleString() || ""}
+            circulating_supply: ${circulating_supply1.toLocaleString() || ""}
           </p>
-          <p className="coin-supply">Mkt Cap Rank: ${total_supply1}</p>
-          <p className="coin-supply">Mkt Cap Rank: ${max_supply1}</p>
-          <p className="coin-ath">
-            Mkt Cap Rank: ${ath1.toLocaleString() || ""}
-          </p>
+          <p className="coin-supply">total_supply: ${total_supply1}</p>
+          <p className="coin-supply">max_supply: ${max_supply1}</p>
+          <p className="coin-ath">ath: ${ath1.toLocaleString() || ""}</p>
 
           {ath_change_percentage1 < 0 ? (
             <p className="coin-percent red">
@@ -104,20 +109,19 @@ const Coin = ({
           )}
 
           <p className="coin-ath">
-            Mkt Cap Rank: ${ath_date1.toLocaleString() || ""}
+            ath_date: ${ath_date1.toLocaleString() || ""}
+          </p>
+          <p className="coin-ath">atl: ${atl1.toLocaleString() || ""}</p>
+          <p className="coin-ath">
+            atl_change_percentage: $
+            {atl_change_percentage1.toLocaleString() || ""}
           </p>
           <p className="coin-ath">
-            Mkt Cap Rank: ${atl1.toLocaleString() || ""}
-          </p>
-          <p className="coin-ath">
-            Mkt Cap Rank: ${atl_change_percentage1.toLocaleString() || ""}
-          </p>
-          <p className="coin-ath">
-            Mkt Cap Rank: ${atl_date1.toLocaleString() || ""}
+            atl_date: ${atl_date1.toLocaleString() || ""}
           </p>
 
           <p className="coin-last_updated">
-            Mkt Cap Rank: ${last_updated1.toLocaleString() || ""}
+            last_updated: ${last_updated1.toLocaleString() || ""}
           </p>
         </div>
       </div>

@@ -24,8 +24,9 @@ function Charts3(props) {
     }
     fetchPrices();
   }, []);
+  var ts = Math.round(new Date().getTime() / 1000);
   var moeda = "usd";
-  var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=${moeda}&from=1556389240&to=1619536840`;
+  var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=${moeda}&from=1556389240&to=${ts}`;
 
   const getChartData = async () => {
     const res = await fetch(crypto);

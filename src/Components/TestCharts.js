@@ -27,10 +27,9 @@ function Charts3(props) {
     fetchPrices();
   }, [currency, timestamp]);
 
-  // console.log(TS);
   const getChartData = async () => {
     var TS = moment(timestamp).format("x");
-    // var ts = Math.round(timestamp.getTime() / 1000);
+
     var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=${currency}&from=1556389240&to=${TS}`;
     const res = await fetch(crypto);
     const data = await res.json();
@@ -58,7 +57,6 @@ function Charts3(props) {
     setCurrency(data.value);
   };
   const handleText = (e) => {
-    console.log(e);
     setTimestamp(e.target.value);
   };
 

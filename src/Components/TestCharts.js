@@ -13,9 +13,9 @@ function Charts3(props) {
   const [series, setSeries] = useState(null);
 
   const options = [
-    { value: "USD", text: "USD" },
-    { value: "EUR", text: "EUR" },
-    { value: "GBP", text: "GPB" },
+    { value: "usd", text: "USD" },
+    { value: "eur", text: "EUR" },
+    { value: "gbp", text: "GPB" },
   ];
 
   useEffect(() => {
@@ -24,9 +24,9 @@ function Charts3(props) {
     }
     fetchPrices();
   }, []);
-  var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=usd&from=1392577232&to=1422577232`;
-  console.log(props.match.params.id);
-  console.log(props.match.params);
+  var moeda = "usd";
+  var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=${moeda}&from=1556389240&to=1619536840`;
+
   const getChartData = async () => {
     const res = await fetch(crypto);
     const data = await res.json();
@@ -68,6 +68,13 @@ function Charts3(props) {
       ) : (
         <>
           <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className="form">
+              <Select
+                placeholder="Select your currency"
+                onChange={handleSelect}
+                options={options}
+              />
+            </div>
             <Chart
               options={chartData}
               series={series}

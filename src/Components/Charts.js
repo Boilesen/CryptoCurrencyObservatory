@@ -36,7 +36,7 @@ function Charts() {
 
   const getChartData = async () => {
     const res = await fetch(
-      `https://api.coingecko.com/api/v3/coins/ethereum/market_chart/range?vs_currency=usd&from=1592577232&to=1672577232`
+      `https://api.coingecko.com/api/v3/coins/ethereum/market_chart/range?vs_currency=usd&from=1556389240&to=1619536840`
     );
     const data = await res.json();
     const categories = Object.values(data.prices.map((X) => X[0]));
@@ -94,6 +94,7 @@ function Charts() {
                 options={options}
               />
             </div>
+
             <div className="price">
               <Card>
                 <Card.Content>

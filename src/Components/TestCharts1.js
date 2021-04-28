@@ -13,11 +13,13 @@ function Charts3(props) {
   const [chartData, setChartData] = useState(null);
   const [series, setSeries] = useState(null);
   const [timestamp, setTimestamp] = useState(new Date());
+  const [timestampi, setTimestampi] = useState(new Date(2021, 0, 1));
 
   const options = [
     { value: "usd", text: "USD" },
     { value: "eur", text: "EUR" },
     { value: "gbp", text: "GPB" },
+    { value: "brl", text: "BRL" },
   ];
 
   useEffect(() => {
@@ -25,12 +27,12 @@ function Charts3(props) {
       getChartData();
     }
     fetchPrices();
-  }, [currency, timestamp]);
+  }, [currency, timestamp, timestampi]);
 
   const getChartData = async () => {
-    var TS = moment(timestamp).format("x");
-
-    var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=${currency}&from=1556389240&to=${TS}`;
+    var TS = moment(timestamp).format("X");
+    var TSi = moment(timestampi).format("X");
+    var crypto = `https://api.coingecko.com/api/v3/coins/${props.match.params.id}/market_chart/range?vs_currency=${currency}&from=${TSi}&to=${TS}`;
     const res = await fetch(crypto);
     const data = await res.json();
     const categories = Object.values(data.prices.map((X) => X[0]));
@@ -59,10 +61,13 @@ function Charts3(props) {
   const handleText = (e) => {
     setTimestamp(e.target.value);
   };
+  const handleText2 = (e) => {
+    setTimestampi(e.target.value);
+  };
 
   return (
     <div className="container">
-      <div className="nav" style={{ padding: "15px", backgroundColor: "gray" }}>
+      <div className="nav" style={{ padding: "15px", backgroundColor: "blue" }}>
         Prices
       </div>
       {loading ? (
@@ -82,13 +87,23 @@ function Charts3(props) {
               />
             </div>
             <div>
-              {" "}
+              <h4>Data Inicial</h4>{" "}
               <input
                 type="date"
                 id="date"
                 name="Date"
-                value={timestamp}
+                onChange={handleText2}
+                value={timestampi}
+              />
+            </div>
+            <div>
+              <h4>Data Final</h4>{" "}
+              <input
+                type="date"
+                id="date"
+                name="Date"
                 onChange={handleText}
+                value={timestamp}
               />
             </div>
             <Chart

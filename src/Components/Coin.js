@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../Styles/Coin.css";
 const Coin = ({
   id,
   name,
   price,
-  symbol,
   marketcap,
   volume,
   image,
@@ -12,36 +12,33 @@ const Coin = ({
   marketcaprank,
 }) => {
   return (
-    <div className="coin-container">
-      <div className="coin-row">
-        <div className="coin">
-          <Link to={`/fullcoin/${id}`}>
+    <Link to={`/fullcoin/${id}`}>
+      <div className="coin-app">
+        <div className="coin-row gradient">
+          <div className="coin">
             {" "}
-            <img src={image} alt="crypto" />{" "}
-          </Link>
-          <h1>{name}</h1>
-          <h2>{id}</h2>
-          <p className="coin-symbol">{symbol}</p>
-        </div>
-        <div className="coin-data">
-          <p className="coin-price">${price}</p>
-          <p className="coin-volume">${volume.toLocaleString()}</p>
+            <img src={image} alt="crypto" /> <span>{name}</span>
+          </div>
+          <div className="coin-data">
+            <p className="coin-price">${price}</p>
+            <p className="coin-volume">${volume.toLocaleString()}</p>
 
-          {priceChange < 0 ? (
-            <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
-          ) : (
-            <p className="coin-percent green">{priceChange.toFixed(2)}%</p>
-          )}
+            {priceChange < 0 ? (
+              <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
+            ) : (
+              <p className="coin-percent green">{priceChange.toFixed(2)}%</p>
+            )}
 
-          <p className="coin-marketcap">
-            Mkt Cap: ${marketcap.toLocaleString()}
-          </p>
-          <p className="coin-marketcap">
-            Mkt Cap Rank: ${marketcaprank.toLocaleString()}
-          </p>
+            <p className="coin-marketcap">
+              Mkt Cap: ${marketcap.toLocaleString()}
+            </p>
+            <p className="coin-marketcap">
+              Mkt Cap Rank: ${marketcaprank.toLocaleString()}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

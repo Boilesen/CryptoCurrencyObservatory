@@ -5,7 +5,7 @@ import "../Styles/Header.css";
 class Header extends Component {
   render() {
     return (
-      <div className="Header">
+      <div className="Header gradient">
         {this.props.location.pathname !== "/" && (
           <header>
             <Link to="/" className="home_btn">

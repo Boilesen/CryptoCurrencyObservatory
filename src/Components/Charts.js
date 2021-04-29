@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
-import ApexCharts from "apexcharts";
-
+import "../Styles/Charts.css";
 import Chart from "react-apexcharts";
 import Chart2 from "./Charts2";
 import Chart3 from "./Charts3";
@@ -30,7 +29,6 @@ function Charts() {
       setPriceData(data.bpi);
       getChartData();
     }
-    fetchPrices();
   }, []);
   var ts = Math.round(new Date().getTime() / 1000);
 
@@ -64,8 +62,8 @@ function Charts() {
   };
 
   return (
-    <div className="container">
-      <div className="nav" style={{ padding: "15px", backgroundColor: "gold" }}>
+    <div className="container gradient">
+      <div className="nav gradient" style={{ padding: "15px" }}>
         Coindesk API Data
       </div>
       {loading ? (

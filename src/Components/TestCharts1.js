@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
-import ApexCharts from "apexcharts";
+import { Dimmer, Loader, Select } from "semantic-ui-react";
 import moment from "moment";
 
 import Chart from "react-apexcharts";
 
 function Charts3(props) {
   const [loading, setLoading] = useState(true);
-  const [priceData, setPriceData] = useState(null);
   const [currency, setCurrency] = useState("usd");
   const [chartData, setChartData] = useState(null);
   const [series, setSeries] = useState(null);

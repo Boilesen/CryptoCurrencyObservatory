@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Coin from "./Coin";
-import { Link } from "react-router-dom";
+
 import "../Styles/Lista.css";
 
 export default Lista;

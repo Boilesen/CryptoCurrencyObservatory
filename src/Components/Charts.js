@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
+import ApexCharts from "apexcharts";
 import "../Styles/Charts.css";
 import Chart from "react-apexcharts";
 import Chart2 from "./Charts2";
@@ -29,6 +30,7 @@ function Charts() {
       setPriceData(data.bpi);
       getChartData();
     }
+    fetchPrices();
   }, []);
   var ts = Math.round(new Date().getTime() / 1000);
 

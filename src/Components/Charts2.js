@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Dimmer, Loader } from "semantic-ui-react";
+import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
+import ApexCharts from "apexcharts";
 import "../Styles/Charts.css";
 import Chart from "react-apexcharts";
 
 function Charts2() {
   const [loading, setLoading] = useState(true);
+  const [priceData, setPriceData] = useState(null);
   const [currency, setCurrency] = useState(null);
   const [chartData, setChartData] = useState(null);
   const [series, setSeries] = useState(null);
+
+  const options = [
+    { value: "USD", text: "USD" },
+    { value: "EUR", text: "EUR" },
+    { value: "GBP", text: "GPB" },
+  ];
 
   useEffect(() => {
     async function fetchPrices() {

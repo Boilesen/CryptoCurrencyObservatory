@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Coin from "./Coin";
 import { Link } from "react-router-dom";
+import "../Styles/Lista.css";
 
 export default Lista;
 
@@ -29,7 +30,7 @@ function Lista() {
   );
 
   return (
-    <div className="coin-app">
+    <div className="coin-app gradient">
       <div className="coin-search">
         <h1 className="coin-text">Search a currency</h1>
         <form>
@@ -43,7 +44,7 @@ function Lista() {
       </div>
       {filteredCoins.map((coin) => {
         return (
-          <div className="conteiner">
+          <div className="conteiner gradient">
             <Coin
               id={coin.id}
               name={coin.name}

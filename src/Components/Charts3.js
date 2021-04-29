@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
 import ApexCharts from "apexcharts";
-
+import "../Styles/Charts.css";
 import Chart from "react-apexcharts";
 
 function Charts3(props) {
@@ -58,7 +58,7 @@ function Charts3(props) {
 
   return (
     <div className="container">
-      <div className="nav" style={{ padding: "15px", backgroundColor: "blue" }}>
+      <div className="nav gradient" style={{ padding: "15px", bottom: "15px" }}>
         total_volumes
       </div>
       {loading ? (

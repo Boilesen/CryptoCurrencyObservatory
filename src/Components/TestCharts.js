@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
-import ApexCharts from "apexcharts";
+import "../Styles/Charts.css";
+
 import moment from "moment";
 
 import Chart from "react-apexcharts";

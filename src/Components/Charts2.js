@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Card, Dimmer, Loader, Select } from "semantic-ui-react";
 import ApexCharts from "apexcharts";
-
+import "../Styles/Charts.css";
 import Chart from "react-apexcharts";
 
 function Charts2() {
@@ -57,7 +57,7 @@ function Charts2() {
 
   return (
     <div className="container">
-      <div className="nav" style={{ padding: "15px", backgroundColor: "red" }}>
+      <div className="nav gradient" style={{ padding: "15px" }}>
         market_caps
       </div>
       {loading ? (
